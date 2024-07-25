@@ -1,6 +1,7 @@
 [
     {
         "id": 1,
-        "name": "Alejandro Gants"
+        "name": "Alejandro Gants",
+        "warehouseId": 1
     }
 ]

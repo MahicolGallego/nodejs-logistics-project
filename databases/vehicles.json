@@ -1,7 +1,8 @@
 [
     {
         "id": 1,
-        "model": "BMW M3",
-        "year": 2022
+        "model": "Volvo FH16",
+        "year": 2022,
+        "driverId": 1
     }
 ]
