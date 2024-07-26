@@ -1,31 +1,31 @@
 {
-  "name": "nodejs-logistics-project",
-  "version": "1.0.0",
-  "main": "index.js",
-  "scripts": {
-    "build": "webpack serve --mode production --open",
-    "star": "webpack serve --mode production --open",
-    "dev": "nodemon",
-    "test": "echo \"Error: no test specified\" && exit 1"
-  },
-  "repository": {
-    "type": "git",
-    "url": "git+https://github.com/MahicolGallego/nodejs-logistics-project.git"
-  },
-  "keywords": [],
-  "author": "",
-  "license": "ISC",
-  "bugs": {
-    "url": "https://github.com/MahicolGallego/nodejs-logistics-project/issues"
-  },
-  "homepage": "https://github.com/MahicolGallego/nodejs-logistics-project#readme",
-  "description": "",
-  "type": "module",
-  "devDependencies": {
-    "dotenv": "^16.4.5",
-    "nodemon": "^3.1.4"
-  },
-  "dependencies": {
-    "express": "^4.19.2"
-  }
+ "name": "nodejs-logistics-project",
+ "version": "1.0.0",
+ "main": "index.js",
+ "scripts": {
+  "build": "webpack serve --mode production --open",
+  "star": "webpack serve --mode production --open",
+  "dev": "nodemon",
+  "test": "echo \"Error: no test specified\" && exit 1"
+ },
+ "repository": {
+  "type": "git",
+  "url": "git+https://github.com/MahicolGallego/nodejs-logistics-project.git"
+ },
+ "keywords": [],
+ "author": "",
+ "license": "ISC",
+ "bugs": {
+  "url": "https://github.com/MahicolGallego/nodejs-logistics-project/issues"
+ },
+ "homepage": "https://github.com/MahicolGallego/nodejs-logistics-project#readme",
+ "description": "",
+ "type": "module",
+ "devDependencies": {
+  "dotenv": "^16.4.5",
+  "nodemon": "^3.1.4"
+ },
+ "dependencies": {
+  "express": "^4.19.2"
+ }
 }

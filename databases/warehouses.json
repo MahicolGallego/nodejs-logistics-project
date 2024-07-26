@@ -1,8 +1,8 @@
 [
-  {
-    "id": 1,
-    "name": "hotwheels",
-    "location": "Av. 80 #30a-2 a 30a-228, Medellín, Antioquia",
-    "vehicleId": 1
-  }
+ {
+  "id": 1,
+  "name": "hotwheels",
+  "location": "Av. 80 #30a-2 a 30a-228, Medellín, Antioquia",
+  "vehicleId": 1
+ }
 ]
