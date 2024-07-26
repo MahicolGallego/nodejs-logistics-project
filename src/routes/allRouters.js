@@ -116,7 +116,7 @@ myRouter.put("/warehouses/:id", async (req, res) => {
     const warehouses = await readFileFs(pathToDBFileWarehouses);
     const indexWarehouse = warehouses.findIndex((w) => w.id === parseInt(req.params.id));
 
-    if(indexWarehouse === -1) return res.status(404).send("Warehouse no encontrado")
+    if(indexWarehouse === -1) return res.status(404).send("Warehouse no encontrado");
 
     const updateWarehouse = {
         ...warehouses[indexWarehouse],
@@ -183,3 +183,41 @@ myRouter.post("/shipments", async (req, res) => {
     res.status(201).json({ message: "shipments created successfully", shipment: newShipment });
 
 });
+
+myRouter.get("/shipments", async (req, res) => {
+    const shipments = await readFileFs(pathToDBFileShipments);
+    res.status(200).json(shipments)
+})
+
+myRouter.get("/shipments/:id", async (req, res) => {
+    const shipments = await readFileFs(pathToDBFileShipments);
+    const shipment = shipments.find((s) => s.id === parseInt(req.params.id))
+
+    if(!shipment) return res.status(404).send("Shipment no encontrado")
+
+    res.status(200).json(shipment)
+})
+
+myRouter.put("/shipments/:id", async (req, res) => {
+
+    //se verificamos relaciones validas
+    
+    req.body.warehouseId = await verifyExistence(req.body.warehouseId, pathToDBFileWarehouses, res, "warehouse");
+
+    if (!req.body.warehouseId) return res.status(400).json({ Mesagge: "Error: Datos no validos para el warehouse a relacionar" });
+    
+    req.body.vehicleId = await verifyExistence(req.body.vehicleId, pathToDBFileVehicles, res, "vehicle");
+
+    if (!req.body.vehicleId) return res.status(400).json({ Mesagge: "Error: Datos no validos para el vehicle a relacionar" });
+    
+    req.body.driverId = await verifyExistence(req.body.driverId, pathToDBFileDrivers, res, "driver");
+
+    if (!req.body.driverId) return res.status(400).json({ Mesagge: "Error: Datos no validos para el driver a relacionar" });
+
+    const shipments = await readFileFs(pathToDBFileShipments);
+
+    const indexShipment = shipments.findIndex((s) => s.id === parseInt(req.params.id));
+    
+    if(indexShipment === -1) return res.status(404).send("shipment no encontrado");
+
+})
